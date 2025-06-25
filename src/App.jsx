@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 function App() {
   // 🧠 1. STATE VARIABLES (All useStates go here)
   const [count, setCount] = useState(0);
+  const [cost, setCost] = useState(0);
 
   // ⚙️ 2. SIDE EFFECTS (API calls, localStorage, etc.)
   useEffect(() => {
@@ -36,6 +37,12 @@ function App() {
         <div className="flex rounded-3xl bg-amber-300 px-4 py-2.5">
               Hardwork is Key to success
         </div>
+
+        <section className="bg-white rounded-xl space-y-4">
+          <div className="ml-4 mt-4 mb-4 font-medium transition-opacity w-full">
+              The power is in the HTML 
+          </div>
+        </section>
 
       </main>
 
