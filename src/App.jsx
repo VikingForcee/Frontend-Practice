@@ -1,57 +1,52 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react"
 
-function App() {
-  // 🧠 1. STATE VARIABLES (All useStates go here)
-  const [count, setCount] = useState(0);
-  const [cost, setCost] = useState(0);
-
-  // ⚙️ 2. SIDE EFFECTS (API calls, localStorage, etc.)
-  useEffect(() => {
-    console.log("App mounted");
-  }, []);
-
+function App(){
+  const [counter, setCounter] = useState(0);
+  
+  const increment = () =>{
+    setCounter(counter + 1);
+  }
   return (
-    // 🧱 3. OUTER LAYOUT
-    <div className="min-h-screen bg-blue-200 text-gray-800 p-6">
-      
-      {/* 🔝 4. HEADER / NAVBAR */}
-      <header className="text-3xl font-bold mb-6">
-        My React App
+    <>
+      <header className="w-full h-20 bg-blue-800 text-2xl text-white">
+        <span className="flex pl-5 pt-5 pb-5 h-full font-extrabold">
+          <h2 className="border-4 border-green-400 rounded-xl">
+            <a href="#footer" className="scroll-smooth p-3"> 1.a Yo </a>
+          </h2> 
+          <h2 className="border-4 border-green-400 ml-6 rounded-xl">
+            <a href="#main1" className="scroll-smooth p-3">1.b Yo </a>
+          </h2>
+          <h2 className="border-4 border-green-400 ml-6 rounded-xl">
+            <a href="#main2" className="p-3">2.c Yo </a>
+          </h2>
+        </span>
       </header>
 
-      {/* 📦 5. MAIN CONTENT */}
-      <main className="space-y-4 ">
-        
-        {/* 🧩 COMPONENTS OR SECTIONS */}
-        <section className="bg-white shadow-md rounded-lg p-4">
-          <h2 className="text-xl font-semibold">Counter Section</h2>
-          <p className="mt-2">Count: {count}</p>
-          <button 
-            onClick={() => setCount(count + 1)} 
-            className="mt-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
-          >
-            Increment
-          </button>
-        </section>
-
-        <div className="flex rounded-3xl bg-amber-300 px-4 py-2.5">
-              Hardwork is Key to success
-        </div>
-
-        <section className="bg-white rounded-xl space-y-4">
-          <div className="ml-4 mt-4 mb-4 font-medium transition-opacity w-full">
-              The power is in the HTML 
-          </div>
-        </section>
-
+      <main className="w-full h-250">
+         <segment id="main1" className="grid grid-cols-2 h-1/2 w-full bg-amber-100 border-2 border-amber-700">
+              <div className="flex bg-amber-100 justify-center items-center">
+                <h2 className="">Yo</h2>
+              </div>
+              <div className="flex bg-amber-200 justify-center items-center">
+                <h2 className="">Mo</h2>
+              </div>
+              <div className="flex bg-amber-300 justify-center items-center">
+                <h2 className="">Lo</h2>
+              </div>
+              <div className="flex bg-amber-400 justify-center items-center">
+                <h2 className="">To</h2>
+              </div>
+         </segment>
       </main>
 
-      {/* 📞 6. FOOTER */}
-      <footer className="mt-10 text-sm text-gray-500 text-center">
-        © {new Date().getFullYear()} Vibhor Gupta
+      <footer className="w-full h-200 bg-red-300">
+        <div id ="footer" className="flex">
+          <button onClick={increment} className="p-5 rounded-xl bg-black text-white">
+            Counter : {counter}
+          </button>
+        </div>
       </footer>
-    </div>
-  );
+    </>
+  )
 }
-
-export default App;
+export default App
