@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 function App(){
   const [counter, setCounter] = useState(0);
@@ -6,6 +6,11 @@ function App(){
   const increment = () =>{
     setCounter(counter + 1);
   }
+
+  useEffect(() => {
+    document.title = `Cliked ${counter} times`;
+  },[counter]);
+
   return (
     <>
       <header className="w-full h-20 bg-blue-800 text-2xl text-white">
@@ -23,7 +28,7 @@ function App(){
       </header>
 
       <main className="w-full h-250">
-         <segment id="main1" className="grid grid-cols-2 h-1/2 w-full bg-amber-100 border-2 border-amber-700">
+         <div id="main1" className="grid grid-cols-2 h-1/2 w-full bg-amber-100 border-2 border-amber-700">
               <div className="flex bg-amber-100 justify-center items-center">
                 <h2 className="">Yo</h2>
               </div>
@@ -36,7 +41,7 @@ function App(){
               <div className="flex bg-amber-400 justify-center items-center">
                 <h2 className="">To</h2>
               </div>
-         </segment>
+         </div>
       </main>
 
       <footer className="w-full h-200 bg-red-300">
