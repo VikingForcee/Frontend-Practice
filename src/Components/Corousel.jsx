@@ -1,7 +1,7 @@
 function Corousel(){
     return (
         <>
-            <div className="w-full h-70 bg-blue-400">
+            <div className="bg-blue-200 min-h-150 z-50 mt-17">
                 
             </div>
         </>
